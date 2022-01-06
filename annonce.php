@@ -7,23 +7,23 @@ require_once("haut_de_page.php");
 <form>
     <h2 class="col">Ajouter un Logement</h2>
     <div class="form row">
-    <div class="form-group col-md-6">
-        <label for="titre">Titre</label>
-        <select class="form-control" name="type" id="type" required="required" placehoder="veuillez choisir le type de logement">
-            <option>Maison</option>
-            <option>Maison Meublee</option>
-            <option>Villa</option>
-            <option>Villa Avec Piscine</option>
-            <option>Appartement</option>
-            <option>Appartemant Meuble</option>
-            <option>Studio</option>
-            <option>Studio Meuble</option>
-        </select>
-    </div>
-    <div class="form-group col-md-6">
-        <label for="photo">Photo</label>
-        <input type="text" class="form-control" name="photo" id="photo" placeholder="photo">
-    </div>
+        <div class="form-group col-md-6">
+            <label for="titre">Titre</label>
+            <select class="form-control" name="type" id="type" required="required" placehoder="veuillez choisir le type de logement">
+                <option>Maison</option>
+                <option>Maison Meublee</option>
+                <option>Villa</option>
+                <option>Villa Avec Piscine</option>
+                <option>Appartement</option>
+                <option>Appartemant Meuble</option>
+                <option>Studio</option>
+                <option>Studio Meuble</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="photo">Photo</label>
+            <input type="text" class="form-control" name="photo" id="photo" placeholder="photo">
+        </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
