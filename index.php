@@ -7,12 +7,12 @@ require_once("haut_de_page.php");
 
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleCaptions" data-slide-to="piscine2"></li>
-    <li data-target="#carouselExampleCaptions" data-slide-to="piscine3"></li>
-    <li data-target="#carouselExampleCaptions" data-slide-to="terasse"></li>
-    <li data-target="#carouselExampleCaptions" data-slide-to="terasse1"></li>
-    <li data-target="#carouselExampleCaptions" data-slide-to="terasse2"></li>
+    <li data-target="#carouselPiscine" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselPiscine2" data-slide-to="piscine2"></li>
+    <li data-target="#carouselPiscine3" data-slide-to="piscine3"></li>
+    <li data-target="#carouselTerasse" data-slide-to="terasse"></li>
+    <li data-target="#carouselTerasse1" data-slide-to="terasse1"></li>
+    <li data-target="#carouselTerasse2" data-slide-to="terasse2"></li>
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -73,7 +73,7 @@ require_once("haut_de_page.php");
     <div class="card" style="width: 18rem;">
       <img src="images/entre1.png" class="card-img-top" alt="entre1">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Entree</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
@@ -83,35 +83,35 @@ require_once("haut_de_page.php");
     <div class="card" style="width: 18rem;">
       <img src="images/façade1.png" class="card-img-top" alt="façade1">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Facade</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>
 
-<div class="col mb-4">
-  <div class="card" style="width: 18rem;">
-    <img src="images/piscine1.png" class="card-img-top" alt="piscine1">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-  </div>
-</div>
-<div class="col mb-4">
-  <div class="card">
+  <div class="col mb-4">
     <div class="card" style="width: 18rem;">
-      <img src="images/saly1.png" class="card-img-top" alt="saly1">
+      <img src="images/piscine1.png" class="card-img-top" alt="piscine1">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Piscine</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>
-</div>
+  <div class="col mb-4">
+    <div class="card">
+      <div class="card" style="width: 18rem;">
+        <img src="images/saly1.png" class="card-img-top" alt="saly1">
+        <div class="card-body">
+          <h5 class="card-title">Chambre</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
