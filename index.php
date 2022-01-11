@@ -5,7 +5,7 @@ require_once("haut_de_page.php");
 
 ?>
 
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+<div class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselPiscine" data-slide-to="0" class="active"></li>
     <li data-target="#carouselPiscine2" data-slide-to="piscine2"></li>
@@ -15,7 +15,7 @@ require_once("haut_de_page.php");
     <li data-target="#carouselTerasse2" data-slide-to="terasse2"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    <div class="carousel-item active" id="carousel-item">
       <img src="images/piscine.png" class="d-block w-100" alt="piscine">
       <div class="carousel-caption d-none d-md-block">
         <h5>Piscine</h5>
