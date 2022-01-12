@@ -4,7 +4,7 @@ require_once("init.php");
 require_once("haut_de_page.php");
 
 ?>
-
+<section class="maCarousel">
 <div class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselPiscine" data-slide-to="0" class="active"></li>
@@ -14,45 +14,48 @@ require_once("haut_de_page.php");
     <li data-target="#carouselTerasse1" data-slide-to="terasse1"></li>
     <li data-target="#carouselTerasse2" data-slide-to="terasse2"></li>
   </ol>
+</div>
+ 
+<div>
   <div class="carousel-inner">
     <div class="carousel-item active" id="carousel-item">
       <img src="images/piscine.png" class="d-block w-100" alt="piscine">
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Piscine</h5>
         <p>Une piscine privee avec de l'eau Turquoise.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="images/piscine2.png" class="d-block w-100" alt="piscine2">
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Piscine</h5>
         <p>Une piscine privee avec de l'eau Turquoise.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="images/piscine3.png" class="d-block w-100" alt="piscine3">
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Piscine</h5>
         <p>Une piscine privee avec de l'eau Turquoise.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="images/terasse.png" class="d-block w-100" alt="terasse">
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Terrasse</h5>
         <p>Une terrasse privee sans vis a vis avec une vue magnifique.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="images/terasse1.png" class="d-block w-100" alt="terasse1">
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Terrasse</h5>
         <p>Une terrasse privee sans vis a vis avec une vue magnifique.</p>
       </div>
     </div>
     <div class="carousel-item">
       <img src="images/terasse2.png" class="d-block w-100" alt="terasse2">
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption">
         <h5>Terrasse</h5>
         <p>Une terrasse privee sans vis a vis avec une vue magnifique.</p>
       </div>
@@ -113,6 +116,7 @@ require_once("haut_de_page.php");
     </div>
   </div>
 </div>
+</section>
 
 
 
