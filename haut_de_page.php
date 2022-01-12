@@ -33,7 +33,7 @@
                         <a class="nav-link" href="blog.php">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">A Propos</a>
+                        <a class="nav-link" href="annonce.php">Annonce</a>
                     </li>
                 </ul>
             </div>

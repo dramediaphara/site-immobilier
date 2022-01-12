@@ -1,11 +1,66 @@
 <?php
 //code php
 require_once("init.php");
+
+          if($_POST) {
+             // echo "<pre>";
+            // var_dump($_POST);
+            // echo "</pre>";
+
+            // photo
+           // echo '<pre>';
+           // var_dump($_FILES);
+           // echo '<pre>';
+
+            if(isset($_FILES) && !empty($_FILES["photo"]["name"])) {
+
+                // nom de la photo
+                $pictureName = $_FILES["photo"]["name"];
+                // copier le chemin vers le serveur en BDD
+                $pathPhotoDB = URL . "images/" . $pictureName;
+                // echo $pathPhotoDB . "<br";
+                // copier sur le serveur
+                $pathFolder = RACINE_SITE . "images" . $pictureName;
+                // echo $pathFolder;
+                copy($_FILES["photo"]["tmp_name"], $pathFolder);
+            }
+
+           $count = $pdo->exec("INSERT INTO logement(titre,photo,chambre,salon,toilette,cuisine,jardin,garage,adresse,ville,cp,surface,prix,type,description) 
+            VALUES(
+                '$_POST[titre]',
+                'photo',
+                '$_POST[chambre]',
+                '$_POST[salon]',
+                '$_POST[toilette]',
+                '$_POST[cuisine]',
+                '$_POST[jardin]',
+                '$_POST[garage]',
+                '$_POST[adresse]',
+                '$_POST[ville]',
+                '$_POST[cp]',
+                '$_POST[surface]',
+                '$_POST[prix]',
+                '$_POST[type]',
+                '$_POST[description]'
+            )");
+
+            if($count > 0) {
+                $countent = "<div class='alert alert-success' role='alert'>
+                  Votre Logement a bien été inséré!
+                </div>";
+            }
+          }
+   
+
 require_once("haut_de_page.php");
 
 ?>
-<form>
-    <h2 class="col">Ajouter un Logement</h2>
+
+
+<?php echo $countent ?>
+
+<form method="POST" enctype="multipart/form-data">
+<h2 class="col">Ajouter un Logement</h2>
     <div class="form row">
         <div class="form-group col-md-6">
             <label for="titre">Titre</label>
@@ -22,7 +77,8 @@ require_once("haut_de_page.php");
         </div>
         <div class="form-group col-md-6">
             <label for="photo">Photo</label>
-            <input type="text" class="form-control" name="photo" id="photo" placeholder="photo">
+            <div class="w-100"></div>
+            <input type="file" name="photo">
         </div>
     </div>
     <div class="form-row">
@@ -125,11 +181,15 @@ require_once("haut_de_page.php");
             </select>
         </div>
     </div>
-    <div class="form-group col">
-        <label for="exampleFormControlTextarea1">Description</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <div>
+    <div class="form-group col-md-12">
+        <label for="description">Description</label>
+        <textarea class="form-control" name="description" id="description" rows="3"></textarea>
     </div>
+    <div class="form-group col-md-2 ">
     <button type="submit" class="btn btn-primary">Envoyer</button>
+    </div>
+    </div>
 </form>
 <?php
 // code php
