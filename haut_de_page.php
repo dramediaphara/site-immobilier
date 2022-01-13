@@ -33,13 +33,12 @@
                         <a class="nav-link" href="blog.php">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="annonce.php">Annonce</a>
+                        <a class="nav-link" href="ajout_logement.php">Ajouter Un Logement</a>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
-
 
         <nav class="monnav navbar-expand-lg ">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
