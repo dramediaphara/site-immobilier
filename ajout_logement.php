@@ -3,6 +3,8 @@
 require_once("init.php");
 
 if ($_POST) {
+
+    $erreur = "";
     // echo "<pre>";
     // var_dump($_POST);
     // echo "</pre>";
@@ -11,43 +13,65 @@ if ($_POST) {
     // echo '<pre>';
     // var_dump($_FILES);
     // echo '<pre>';
+    // extension
+    $extensions = [".png", ".jpg", ".jpeg"];
+    $extension = strrchr($_FILES["photo"]["name"], ".");
 
-    if (isset($_FILES) && !empty($_FILES["photo"]["name"])) {
-
-        // nom de la photo
-        $pictureName = $_FILES["photo"]["name"];
-        // copier le chemin vers le serveur en BDD
-        $pathPhotoDB = URL . "annonce/" . $pictureName;
-        // echo $pathPhotoDB . "<br";
-        // copier sur le serveur
-        $pathFolder = RACINE_SITE . "images" . $pictureName;
-        // echo $pathFolder;
-        copy($_FILES["photo"]["tmp_name"], $pathFolder);
+    if (!in_array($extension, $extensions)) {
+        $erreur .= "<div class='alert alert-success' role='alert'>
+        Votre Logement a bien été inséré!
+      </div>";
     }
 
-    $count = $pdo->exec("INSERT INTO logement(titre, photo, chambre, salon, toilette, cuisine, jardin, garage, adresse, ville, cp, surface, prix, type, description) 
-            VALUES(
-                '$_POST[titre]',
-                '$pathPhotoDB',
-                '$_POST[chambre]',
-                '$_POST[salon]',
-                '$_POST[toilette]',
-                '$_POST[cuisine]',
-                '$_POST[jardin]',
-                '$_POST[garage]',
-                '$_POST[adresse]',
-                '$_POST[ville]',
-                '$_POST[cp]',
-                '$_POST[surface]',
-                '$_POST[prix]',
-                '$_POST[type]',
-                '$_POST[description]'
-            )");
+    $maxSize = 1000000;
+    if ($_FILES["photo"]["size"] > $maxSize) {
+        $erreur .= "<div class='alert alert-success' role='alert'>
+        Veuillez uplader une image moins lourde (1Mo max)
+      </div>";
+    }
 
-    if ($count > 0) {
-        $countent = "<div class='alert alert-success' role='alert'>
-                  Votre Logement a bien été inséré!
-                </div>";
+    if (empty($erreur)) {
+
+        if (isset($_FILES) && !empty($_FILES["photo"]["name"])) {
+
+            // nom de la photo
+            $pictureName = $_FILES["photo"]["name"];
+            // copier le chemin vers le serveur en BDD
+            $pathPhotoDB = URL . "images/" . $pictureName;
+            // echo $pathPhotoDB . "<br";
+            // copier sur le serveur
+            $pathFolder = RACINE_SITE . "images/" . $pictureName;
+            // echo $pathFolder;
+            copy($_FILES["photo"]["tmp_name"], $pathFolder);
+        }
+    }
+    if (empty($erreur)) {
+
+
+        $count = $pdo->exec("INSERT INTO logement(titre, photo, chambre, salon, toilette, cuisine, jardin, garage, adresse, ville, cp, surface, prix, type, description) 
+    VALUES(
+        '$_POST[titre]',
+        '$pathPhotoDB',
+        '$_POST[chambre]',
+        '$_POST[salon]',
+        '$_POST[toilette]',
+        '$_POST[cuisine]',
+        '$_POST[jardin]',
+        '$_POST[garage]',
+        '$_POST[adresse]',
+        '$_POST[ville]',
+        '$_POST[cp]',
+        '$_POST[surface]',
+        '$_POST[prix]',
+        '$_POST[type]',
+        '$_POST[description]'
+    )");
+
+        if ($count > 0) {
+            $countent = "<div class='alert alert-success' role='alert'>
+          Votre Logement a bien été inséré!
+        </div>";
+        }
     }
 }
 
@@ -56,7 +80,7 @@ require_once("haut_de_page.php");
 
 ?>
 
-
+<?php echo $erreur ?>
 <?php echo $countent ?>
 
 <form method="POST" enctype="multipart/form-data">
@@ -145,6 +169,8 @@ require_once("haut_de_page.php");
         </div>
     </div>
 </form>
+
+
 <?php
 // code php
 require_once("bas_de_page.php")

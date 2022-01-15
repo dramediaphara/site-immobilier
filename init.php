@@ -6,7 +6,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=immobilier','root','', array(PDO::AT
 
 $_countent ="";
 
-define("URL","http://" . $_SERVER["HTTP_HOST"] . "/");
-define("RACINE_SITE", $_SERVER["DOCUMENT_ROOT"] . "/");
+define("URL","http://" . $_SERVER["HTTP_HOST"] . "/annonce/");
+define("RACINE_SITE", $_SERVER["DOCUMENT_ROOT"] . "/annonce/");
 
 ?>
