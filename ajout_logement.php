@@ -93,7 +93,9 @@ if ($_POST) {
         if (isset($_FILES) && !empty($_FILES["photo"]["name"])) {
 
             // nom de la photo
-            $pictureName = $_FILES["photo"]["name"];
+            //$pictureName = $_FILES["photo"]["name"];
+            $pictureName = "logement_" . time(). $extension;
+
             // copier le chemin vers le serveur en BDD
             $pathPhotoDB = URL . "images/" . $pictureName;
             // echo $pathPhotoDB . "<br";

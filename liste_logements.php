@@ -26,7 +26,7 @@ require_once("haut_de_page.php");
 
     <tr>
       <td><?php echo $logement["id_logement"]; ?></td>
-      <td><a href="fiche_logement.php?id_logement=<?php echo $logement["id_logement"]; ?>"><?php echo $logement["titre"]; ?></a>git</td>
+      <td><a href="fiche_logement.php?id_logement=<?php echo $logement["id_logement"]; ?>"><?php echo $logement["titre"]; ?></a></td>
       <td><img style="width:50px" src="<?php echo $logement["photo"]; ?>" alt="<?php echo $logement["photo"]; ?>"></td>
       <td><?php echo $logement["chambre"]; ?></td>
       <td><?php echo $logement["salon"]; ?></td>
