@@ -34,7 +34,7 @@ require_once("haut_de_page.php");
       <td><?php echo $logement["cuisine"]; ?></td>
       <td><?php echo $logement["jardin"]; ?></td>
       <td><?php echo $logement["garage"]; ?></td>
-      <td><?php echo $logement["adresse"]; ?></td>
+      <td><?php echo(strlen($logement["adresse"]) > 20) ? substr($logement["adresse"], 0, 20) . "..." : $logement["adresse"] ?></td>
       <td><?php echo $logement["ville"]; ?></td>
       <td><?php echo $logement["cp"]; ?></td>
       <td><?php echo $logement["surface"]; ?></td>

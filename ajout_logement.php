@@ -223,11 +223,11 @@ require_once("haut_de_page.php");
             <label for="type">Type</label>
             <select class="form-control" name="type" id="type" required="required" placehoder="veuillez choisir le type de logement">
                 <option>Vente</option>
-                <option>Location Saisonnier</option>
-                <option>Location Annuelle</option>
+                <option>Location Mensuelle</option>
+                <option>Location Weed End</option>
                 <option>Location Pour Mariage</option>
                 <option>Location Pour Fetes</option>
-                <option>Location Temporaire</option>
+                <option>Location Journaliere</option>
             </select>
         </div>
     </div>
@@ -236,7 +236,7 @@ require_once("haut_de_page.php");
             <label for="description">Description</label>
             <textarea class="form-control" name="description" id="description" rows="3"><?php echo $description ?></textarea>
         </div>
-        <div class="form-group col-md-2 ">
+        <div class="form-group col-md-2">
             <button type="submit" class="btn btn-primary">Envoyer</button>
         </div>
     </div>
